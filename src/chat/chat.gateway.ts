@@ -1,3 +1,4 @@
+import { Logger } from '@nestjs/common';
 import {
     WebSocketGateway,
     WebSocketServer,
@@ -38,6 +39,7 @@ import {
   
     @SubscribeMessage('chat')
     async onChat(client, message) {
-      client.broadcast.emit('chat', message);
+        client.broadcast.emit('chat', message);
+        //Logger.log("message");
     }
   }
