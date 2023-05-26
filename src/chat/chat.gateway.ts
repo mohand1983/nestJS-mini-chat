@@ -28,6 +28,13 @@ import {
       // Notify connected clients of current users
       this.server.emit('users', this.users);
     }
+
+    /**
+     * Cette fonction est un gestionnaire d'événement qui s'exécute 
+     * lorsque le client envoie un message avec l'événement "chat".
+     * @param client  représente la connexion client qui a envoyé le message
+     * @param message contient les données du message envoyé
+     */
   
     @SubscribeMessage('chat')
     async onChat(client, message) {
